@@ -12,9 +12,16 @@ import Alamofire
 class PhotoRecuperationService {
     static var instance = PhotoRecuperationService()
 
+    var sessionManager: SessionManager
+
+    init() {
+        let configuration = URLSessionConfiguration.default
+        sessionManager = Alamofire.SessionManager(configuration: configuration)
+    }
+
     func retrieveUrls(forAnnotation annotation: DroppablePin, completionHandler: @escaping (_ success: Bool,_ urls: [String]) -> Void) {
         var imageUrls = [String]()
-        Alamofire.request(flickrUrl(forApiKey: apiKey, withAnnotation: annotation, addNumberOfPhotos: 40))
+        sessionManager.request(flickrUrl(forApiKey: apiKey, withAnnotation: annotation, addNumberOfPhotos: 40))
             .responseJSON { (response) in
                 if response.result.error == nil {
                     guard let json = response.result.value as? Dictionary<String, AnyObject> else { return }
