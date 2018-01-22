@@ -18,6 +18,7 @@
 		867427EE2015F9AF006E501E /* DroppablePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427ED2015F9AF006E501E /* DroppablePin.swift */; };
 		867427F0201641D1006E501E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427EF201641D1006E501E /* PhotoCollectionViewCell.swift */; };
 		867427F220164280006E501E /* UICollectionViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F120164280006E501E /* UICollectionViewDelegate+DataSource.swift */; };
+		867427F4201645D5006E501E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F3201645D5006E501E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		867427ED2015F9AF006E501E /* DroppablePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppablePin.swift; sourceTree = "<group>"; };
 		867427EF201641D1006E501E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		867427F120164280006E501E /* UICollectionViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
+		867427F3201645D5006E501E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		867427E82015E7B1006E501E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				867427F3201645D5006E501E /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				867427D62015E6E7006E501E /* MapViewController.swift in Sources */,
 				867427D42015E6E7006E501E /* AppDelegate.swift in Sources */,
 				867427F0201641D1006E501E /* PhotoCollectionViewCell.swift in Sources */,
+				867427F4201645D5006E501E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
