@@ -17,4 +17,8 @@ extension MapViewController: MKMapViewDelegate {
                                                                   regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+
+    @objc func dropPin(sender: UITapGestureRecognizer) {
+        //TODO : Drop pin
+    }
 }
