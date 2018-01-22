@@ -18,7 +18,14 @@ extension MapViewController: MKMapViewDelegate {
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
+    func removePin() {
+        for annotation in mapView.annotations {
+            mapView.removeAnnotation(annotation)
+        }
+    }
+
     @objc func dropPin(sender: UITapGestureRecognizer) {
+        removePin()
         let touchPoint = sender.location(in: mapView)
         let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         let annotation = DroppablePin(coordinate: touchCoordinate, identifier: "droppablePin")
