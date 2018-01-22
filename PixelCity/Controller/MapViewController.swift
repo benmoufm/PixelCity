@@ -8,15 +8,22 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
 
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
 
+    //MARK:- Variables
+    var locationManager = CLLocationManager()
+    let authorizationStatus = CLLocationManager.authorizationStatus()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        locationManager.delegate = self
+        configureLocationServices()
     }
 
     override func didReceiveMemoryWarning() {

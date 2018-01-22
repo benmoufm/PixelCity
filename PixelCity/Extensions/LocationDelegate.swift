@@ -10,5 +10,11 @@ import UIKit
 import CoreLocation
 
 extension MapViewController: CLLocationManagerDelegate {
-
+    func configureLocationServices() {
+        if authorizationStatus == .notDetermined {
+            locationManager.requestAlwaysAuthorization()
+        } else {
+            return
+        }
+    }
 }
