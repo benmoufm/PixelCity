@@ -26,6 +26,9 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     var spinner: UIActivityIndicatorView?
     var progressLabel: UILabel?
 
+    var flowLayout = UICollectionViewFlowLayout()
+    var collectionView: UICollectionView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -33,6 +36,12 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
         configureLocationServices()
         addDoubleTap()
         addSwipe()
+
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
+        collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "photoCell")
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
+        pullUpView.addSubview(collectionView!)
     }
 
     //MARK: - Gesture add functions
@@ -70,7 +79,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
         spinner?.activityIndicatorViewStyle = .whiteLarge
         spinner?.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         spinner?.startAnimating()
-        pullUpView.addSubview(spinner!)
+        collectionView?.addSubview(spinner!)
     }
 
     func removeSpinner() {
@@ -88,7 +97,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
         progressLabel?.font = UIFont(name: "Avenir Next", size: 18)
         progressLabel?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         progressLabel?.textAlignment = .center
-        pullUpView.addSubview(progressLabel!)
+        collectionView?.addSubview(progressLabel!)
     }
 
     func removeProgressLabel() {
