@@ -17,6 +17,7 @@
 		867427EC2015F25F006E501E /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427EB2015F25F006E501E /* LocationDelegate.swift */; };
 		867427EE2015F9AF006E501E /* DroppablePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427ED2015F9AF006E501E /* DroppablePin.swift */; };
 		867427F0201641D1006E501E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427EF201641D1006E501E /* PhotoCollectionViewCell.swift */; };
+		867427F220164280006E501E /* UICollectionViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F120164280006E501E /* UICollectionViewDelegate+DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		867427EB2015F25F006E501E /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
 		867427ED2015F9AF006E501E /* DroppablePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppablePin.swift; sourceTree = "<group>"; };
 		867427EF201641D1006E501E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		867427F120164280006E501E /* UICollectionViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				867427E92015F0C3006E501E /* MapDelegate.swift */,
 				867427EB2015F25F006E501E /* LocationDelegate.swift */,
+				867427F120164280006E501E /* UICollectionViewDelegate+DataSource.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				867427EA2015F0C3006E501E /* MapDelegate.swift in Sources */,
 				867427EC2015F25F006E501E /* LocationDelegate.swift in Sources */,
+				867427F220164280006E501E /* UICollectionViewDelegate+DataSource.swift in Sources */,
 				867427EE2015F9AF006E501E /* DroppablePin.swift in Sources */,
 				867427D62015E6E7006E501E /* MapViewController.swift in Sources */,
 				867427D42015E6E7006E501E /* AppDelegate.swift in Sources */,
