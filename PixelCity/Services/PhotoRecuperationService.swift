@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class PhotoRecuperationService {
     static var instance = PhotoRecuperationService()
@@ -20,22 +21,34 @@ class PhotoRecuperationService {
     }
 
     func retrieveUrls(forAnnotation annotation: DroppablePin, completionHandler: @escaping (_ success: Bool,_ urls: [String]) -> Void) {
-        var imageUrls = [String]()
         sessionManager.request(flickrUrl(forApiKey: apiKey, withAnnotation: annotation, addNumberOfPhotos: 40))
             .responseJSON { (response) in
                 if response.result.error == nil {
-                    guard let json = response.result.value as? Dictionary<String, AnyObject> else { return }
-                    let photosDictionnary = json["photos"] as! Dictionary<String, AnyObject>
-                    let photosDictionnayArray = photosDictionnary["photo"] as! [Dictionary<String, AnyObject>]
-                    for photo in photosDictionnayArray {
-                        let postUrl = "https://farm\(photo["farm"]!).staticflickr.com/\(photo["server"]!)/\(photo["id"]!)_\(photo["secret"]!)_h_d.jpg"
-                        imageUrls.append(postUrl)
+                    guard let data = response.data else { return }
+                    do {
+                        let json = try JSON(data: data)
+                        let photosDictionnary = json["photos"].dictionaryValue
+                        guard let photosDictionnaryArray = photosDictionnary["photo"]?.arrayValue else { fatalError() }
+                        let urlsArray = photosDictionnaryArray.map { (photo: JSON) -> String in
+                            self.buildImageUrl(photo: photo)
+                        }
+                        completionHandler(true, urlsArray)
+                    } catch let error {
+                        debugPrint(error as Any)
+                        completionHandler(false, [])
                     }
-                    completionHandler(true, imageUrls)
                 } else {
                     debugPrint(response.result.error as Any)
                     completionHandler(false, [])
                 }
         }
+    }
+
+    private func buildImageUrl(photo: JSON) -> String {
+        guard let farm = photo["farm"].int,
+            let server = photo["server"].string,
+            let id = photo["id"].string,
+            let secret = photo["secret"].string else { return "" }
+        return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_h_d.jpg"
     }
 }
