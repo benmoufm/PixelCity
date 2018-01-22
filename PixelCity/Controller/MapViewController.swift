@@ -29,6 +29,8 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     var flowLayout = UICollectionViewFlowLayout()
     var collectionView: UICollectionView?
 
+    var imageUrlsArray = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self

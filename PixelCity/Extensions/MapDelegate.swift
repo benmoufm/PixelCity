@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import Alamofire
+import AlamofireImage
 
 extension MapViewController: MKMapViewDelegate {
     func centerMapOnUserLocation() {
@@ -21,6 +23,26 @@ extension MapViewController: MKMapViewDelegate {
     func removePin() {
         for annotation in mapView.annotations {
             mapView.removeAnnotation(annotation)
+        }
+    }
+
+    func retrieveUrls(forAnnotation annotation: DroppablePin, completionHandler: @escaping (_ status: Bool) -> Void) {
+        imageUrlsArray = []
+        Alamofire.request(flickrUrl(forApiKey: apiKey, withAnnotation: annotation, addNumberOfPhotos: 40))
+            .responseJSON { (response) in
+                if response.result.error == nil {
+                    guard let json = response.result.value as? Dictionary<String, AnyObject> else { return }
+                    let photosDictionnary = json["photos"] as! Dictionary<String, AnyObject>
+                    let photosDictionnayArray = photosDictionnary["photo"] as! [Dictionary<String, AnyObject>]
+                    for photo in photosDictionnayArray {
+                        let postUrl = "https://farm\(photo["farm"]!).staticflickr.com/\(photo["server"]!)/\(photo["id"]!)_\(photo["secret"]!)_h_d.jpg"
+                        self.imageUrlsArray.append(postUrl)
+                    }
+                    completionHandler(true)
+                } else {
+                    debugPrint(response.result.error as Any)
+                    completionHandler(false)
+                }
         }
     }
 
@@ -49,5 +71,10 @@ extension MapViewController: MKMapViewDelegate {
         animateViewUp()
         addSpinner()
         addProgressLabel()
+        retrieveUrls(forAnnotation: annotation) { (success) in
+            if success {
+
+            }
+        }
     }
 }
