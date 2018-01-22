@@ -21,6 +21,10 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     var locationManager = CLLocationManager()
     let authorizationStatus = CLLocationManager.authorizationStatus()
     let regionRadius: Double = 1000
+    let screenSize = UIScreen.main.bounds
+
+    var spinner: UIActivityIndicatorView?
+    var progressLabel: UILabel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +61,21 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
         pullUpViewHeightConstraint.constant = 0
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
+        }
+    }
+
+    func addSpinner() {
+        spinner = UIActivityIndicatorView()
+        spinner?.center = CGPoint(x: (screenSize.width / 2) - ((spinner?.frame.width)! / 2), y: 150)
+        spinner?.activityIndicatorViewStyle = .whiteLarge
+        spinner?.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        spinner?.startAnimating()
+        pullUpView.addSubview(spinner!)
+    }
+
+    func removeSpinner() {
+        if spinner != nil {
+            spinner?.removeFromSuperview()
         }
     }
 

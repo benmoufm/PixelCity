@@ -38,6 +38,7 @@ extension MapViewController: MKMapViewDelegate {
     //MARK: - @objc functions
     @objc func dropPin(sender: UITapGestureRecognizer) {
         removePin()
+        removeSpinner()
         let touchPoint = sender.location(in: mapView)
         let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         let annotation = DroppablePin(coordinate: touchCoordinate, identifier: "droppablePin")
@@ -45,5 +46,6 @@ extension MapViewController: MKMapViewDelegate {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(touchCoordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
         animateViewUp()
+        addSpinner()
     }
 }
