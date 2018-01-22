@@ -61,12 +61,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ls0-HG-R7O">
                                 <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="urI-H0-gyq"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ls0-HG-R7O" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="1ZK-hE-eUI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Suh-OF-bPf" secondAttribute="bottom" constant="20" id="4Ps-C4-KZb"/>
+                            <constraint firstItem="ls0-HG-R7O" firstAttribute="top" secondItem="Suh-OF-bPf" secondAttribute="bottom" constant="20" id="6Ir-uz-KYX"/>
                             <constraint firstItem="Of1-SS-dto" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FPJ-hJ-3fq"/>
                             <constraint firstItem="ls0-HG-R7O" firstAttribute="top" secondItem="ca5-UP-Pl3" secondAttribute="bottom" id="FUf-PH-lFc"/>
                             <constraint firstItem="ca5-UP-Pl3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fd5-Lf-3zK"/>
@@ -76,13 +79,14 @@
                             <constraint firstItem="ca5-UP-Pl3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YP4-Gt-7Lv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Suh-OF-bPf" secondAttribute="trailing" constant="20" id="ZXq-6N-qeT"/>
                             <constraint firstItem="Of1-SS-dto" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="r9A-KA-nxc"/>
-                            <constraint firstItem="ca5-UP-Pl3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tFK-Xu-djQ"/>
                             <constraint firstAttribute="trailing" secondItem="ls0-HG-R7O" secondAttribute="trailing" id="z9N-dt-IeU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="ca5-UP-Pl3" id="iyg-6X-nVO"/>
+                        <outlet property="pullUpView" destination="ls0-HG-R7O" id="Beo-QU-KGc"/>
+                        <outlet property="pullUpViewHeightConstraint" destination="urI-H0-gyq" id="ZFI-cw-lix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

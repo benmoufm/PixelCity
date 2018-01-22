@@ -14,6 +14,8 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
 
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var pullUpView: UIView!
+    @IBOutlet weak var pullUpViewHeightConstraint: NSLayoutConstraint!
 
     //MARK:- Variables
     var locationManager = CLLocationManager()
@@ -33,6 +35,13 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
         doubleTap.numberOfTapsRequired = 2
         doubleTap.delegate = self
         mapView.addGestureRecognizer(doubleTap)
+    }
+
+    func animateViewUp() {
+        pullUpViewHeightConstraint.constant = 300
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
 
     //MARK: - IBAction
