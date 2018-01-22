@@ -18,6 +18,7 @@ class MapViewController: UIViewController {
     //MARK:- Variables
     var locationManager = CLLocationManager()
     let authorizationStatus = CLLocationManager.authorizationStatus()
+    let regionRadius: Double = 1000
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,9 @@ class MapViewController: UIViewController {
 
     //MARK: - IBAction
     @IBAction func centerMapButtonPressed(_ sender: Any) {
-
+        if authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse {
+            centerMapOnUserLocation()
+        }
     }
 }
 

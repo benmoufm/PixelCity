@@ -17,4 +17,8 @@ extension MapViewController: CLLocationManagerDelegate {
             return
         }
     }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        centerMapOnUserLocation()
+    }
 }
