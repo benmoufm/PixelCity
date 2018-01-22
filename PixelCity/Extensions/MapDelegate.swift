@@ -26,26 +26,6 @@ extension MapViewController: MKMapViewDelegate {
         }
     }
 
-    func retrieveUrls(forAnnotation annotation: DroppablePin, completionHandler: @escaping (_ status: Bool) -> Void) {
-        imageUrlsArray = []
-        Alamofire.request(flickrUrl(forApiKey: apiKey, withAnnotation: annotation, addNumberOfPhotos: 40))
-            .responseJSON { (response) in
-                if response.result.error == nil {
-                    guard let json = response.result.value as? Dictionary<String, AnyObject> else { return }
-                    let photosDictionnary = json["photos"] as! Dictionary<String, AnyObject>
-                    let photosDictionnayArray = photosDictionnary["photo"] as! [Dictionary<String, AnyObject>]
-                    for photo in photosDictionnayArray {
-                        let postUrl = "https://farm\(photo["farm"]!).staticflickr.com/\(photo["server"]!)/\(photo["id"]!)_\(photo["secret"]!)_h_d.jpg"
-                        self.imageUrlsArray.append(postUrl)
-                    }
-                    completionHandler(true)
-                } else {
-                    debugPrint(response.result.error as Any)
-                    completionHandler(false)
-                }
-        }
-    }
-
     //MARK: - Delegate functions
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
@@ -71,9 +51,9 @@ extension MapViewController: MKMapViewDelegate {
         animateViewUp()
         addSpinner()
         addProgressLabel()
-        retrieveUrls(forAnnotation: annotation) { (success) in
+        PhotoRecuperationService.instance.retrieveUrls(forAnnotation: annotation) { (success, urls) in
             if success {
-
+                self.imageUrlsArray = urls
             }
         }
     }

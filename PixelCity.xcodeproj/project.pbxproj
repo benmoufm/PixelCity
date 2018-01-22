@@ -19,6 +19,7 @@
 		867427F0201641D1006E501E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427EF201641D1006E501E /* PhotoCollectionViewCell.swift */; };
 		867427F220164280006E501E /* UICollectionViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F120164280006E501E /* UICollectionViewDelegate+DataSource.swift */; };
 		867427F4201645D5006E501E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F3201645D5006E501E /* Constants.swift */; };
+		867427F720165320006E501E /* PhotoRecuperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F620165320006E501E /* PhotoRecuperationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		867427EF201641D1006E501E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		867427F120164280006E501E /* UICollectionViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		867427F3201645D5006E501E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		867427F620165320006E501E /* PhotoRecuperationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRecuperationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		867427D22015E6E7006E501E /* PixelCity */ = {
 			isa = PBXGroup;
 			children = (
+				867427F5201652F8006E501E /* Services */,
 				867427E82015E7B1006E501E /* Utilities */,
 				867427E72015E7A8006E501E /* Extensions */,
 				867427E62015E7A1006E501E /* View */,
@@ -136,6 +139,14 @@
 				867427F3201645D5006E501E /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		867427F5201652F8006E501E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				867427F620165320006E501E /* PhotoRecuperationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 				867427D62015E6E7006E501E /* MapViewController.swift in Sources */,
 				867427D42015E6E7006E501E /* AppDelegate.swift in Sources */,
 				867427F0201641D1006E501E /* PhotoCollectionViewCell.swift in Sources */,
+				867427F720165320006E501E /* PhotoRecuperationService.swift in Sources */,
 				867427F4201645D5006E501E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
