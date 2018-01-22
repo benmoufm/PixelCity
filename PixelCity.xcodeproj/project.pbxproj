@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		85B799A4B0E062F51A7A20A2 /* Pods_PixelCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0792A9FE8F099B36CCC8898F /* Pods_PixelCity.framework */; };
 		867427D42015E6E7006E501E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427D32015E6E7006E501E /* AppDelegate.swift */; };
-		867427D62015E6E7006E501E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427D52015E6E7006E501E /* ViewController.swift */; };
+		867427D62015E6E7006E501E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427D52015E6E7006E501E /* MapViewController.swift */; };
 		867427D92015E6E7006E501E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867427D72015E6E7006E501E /* Main.storyboard */; };
 		867427DB2015E6E7006E501E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867427DA2015E6E7006E501E /* Assets.xcassets */; };
 		867427DE2015E6E7006E501E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867427DC2015E6E7006E501E /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		5A94C22A51508B9A8249EC44 /* Pods-PixelCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelCity.release.xcconfig"; path = "Pods/Target Support Files/Pods-PixelCity/Pods-PixelCity.release.xcconfig"; sourceTree = "<group>"; };
 		867427D02015E6E7006E501E /* PixelCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		867427D32015E6E7006E501E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		867427D52015E6E7006E501E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		867427D52015E6E7006E501E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		867427D82015E6E7006E501E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		867427DA2015E6E7006E501E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		867427DD2015E6E7006E501E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		867427E52015E797006E501E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				867427D52015E6E7006E501E /* ViewController.swift */,
+				867427D52015E6E7006E501E /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				867427D62015E6E7006E501E /* ViewController.swift in Sources */,
+				867427D62015E6E7006E501E /* MapViewController.swift in Sources */,
 				867427D42015E6E7006E501E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
