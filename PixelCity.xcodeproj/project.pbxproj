@@ -54,14 +54,46 @@
 		867427D22015E6E7006E501E /* PixelCity */ = {
 			isa = PBXGroup;
 			children = (
+				867427E82015E7B1006E501E /* Utilities */,
+				867427E72015E7A8006E501E /* Extensions */,
+				867427E62015E7A1006E501E /* View */,
+				867427E52015E797006E501E /* Controller */,
 				867427D32015E6E7006E501E /* AppDelegate.swift */,
-				867427D52015E6E7006E501E /* ViewController.swift */,
 				867427D72015E6E7006E501E /* Main.storyboard */,
 				867427DA2015E6E7006E501E /* Assets.xcassets */,
 				867427DC2015E6E7006E501E /* LaunchScreen.storyboard */,
 				867427DF2015E6E7006E501E /* Info.plist */,
 			);
 			path = PixelCity;
+			sourceTree = "<group>";
+		};
+		867427E52015E797006E501E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				867427D52015E6E7006E501E /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		867427E62015E7A1006E501E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		867427E72015E7A8006E501E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		867427E82015E7B1006E501E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
