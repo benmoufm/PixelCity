@@ -21,6 +21,7 @@
 		867427F4201645D5006E501E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F3201645D5006E501E /* Constants.swift */; };
 		867427F720165320006E501E /* PhotoRecuperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F620165320006E501E /* PhotoRecuperationService.swift */; };
 		867427F92017376A006E501E /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F82017376A006E501E /* PopViewController.swift */; };
+		867427FB20173CB7006E501E /* ViewControllerPreviewingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427FA20173CB7006E501E /* ViewControllerPreviewingDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		867427F3201645D5006E501E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		867427F620165320006E501E /* PhotoRecuperationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRecuperationService.swift; sourceTree = "<group>"; };
 		867427F82017376A006E501E /* PopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
+		867427FA20173CB7006E501E /* ViewControllerPreviewingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPreviewingDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				867427E92015F0C3006E501E /* MapDelegate.swift */,
 				867427EB2015F25F006E501E /* LocationDelegate.swift */,
 				867427F120164280006E501E /* UICollectionViewDelegate+DataSource.swift */,
+				867427FA20173CB7006E501E /* ViewControllerPreviewingDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				867427D62015E6E7006E501E /* MapViewController.swift in Sources */,
 				867427D42015E6E7006E501E /* AppDelegate.swift in Sources */,
 				867427F0201641D1006E501E /* PhotoCollectionViewCell.swift in Sources */,
+				867427FB20173CB7006E501E /* ViewControllerPreviewingDelegate.swift in Sources */,
 				867427F720165320006E501E /* PhotoRecuperationService.swift in Sources */,
 				867427F4201645D5006E501E /* Constants.swift in Sources */,
 			);
