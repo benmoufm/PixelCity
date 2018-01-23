@@ -6,7 +6,7 @@
 //  Copyright © 2018 Mélodie Benmouffek. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 import SwiftyJSON
 
@@ -41,6 +41,25 @@ class PhotoRecuperationService {
                     debugPrint(response.result.error as Any)
                     completionHandler(false, [])
                 }
+        }
+    }
+
+    func retrieveImages(urls: [String], progressLabel: UILabel, completion: @escaping (_ success: Bool,_ images: [UIImage]) -> Void) {
+        var imageArray = [UIImage]()
+        for url in urls {
+            sessionManager.request(url).responseImage(completionHandler: { (response) in
+                if response.result.error == nil {
+                    guard let image = response.value else { return }
+                    imageArray.append(image)
+                    progressLabel.text = "\(imageArray.count)/\(NUMBER_OF_PHOTOS) IMAGES DOWNLOADED"
+                    if imageArray.count == urls.count {
+                        completion(true, imageArray)
+                    }
+                } else {
+                    debugPrint(response.result.error as Any)
+                    completion(false, [])
+                }
+            })
         }
     }
 

@@ -53,7 +53,15 @@ extension MapViewController: MKMapViewDelegate {
         addProgressLabel()
         PhotoRecuperationService.instance.retrieveUrls(forAnnotation: annotation) { (success, urls) in
             if success {
-                self.imageUrlsArray = urls
+                PhotoRecuperationService.instance.retrieveImages(urls: urls,
+                                                                 progressLabel: self.progressLabel!,
+                                                                 completion: { (success, images) in
+                    if success {
+                        self.removeSpinner()
+                        self.removeProgressLabel()
+                        self.imagesArray = images
+                    }
+                })
             }
         }
     }

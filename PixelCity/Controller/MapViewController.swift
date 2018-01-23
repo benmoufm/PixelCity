@@ -29,7 +29,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     var flowLayout = UICollectionViewFlowLayout()
     var collectionView: UICollectionView?
 
-    var imageUrlsArray = [String]()
+    var imagesArray = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +96,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
                                       y: 175,
                                       width: 240,
                                       height: 40)
-        progressLabel?.font = UIFont(name: "Avenir Next", size: 18)
+        progressLabel?.font = UIFont(name: "Avenir Next", size: 14)
         progressLabel?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         progressLabel?.textAlignment = .center
         collectionView?.addSubview(progressLabel!)
