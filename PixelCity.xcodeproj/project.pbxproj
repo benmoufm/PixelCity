@@ -20,6 +20,7 @@
 		867427F220164280006E501E /* UICollectionViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F120164280006E501E /* UICollectionViewDelegate+DataSource.swift */; };
 		867427F4201645D5006E501E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F3201645D5006E501E /* Constants.swift */; };
 		867427F720165320006E501E /* PhotoRecuperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F620165320006E501E /* PhotoRecuperationService.swift */; };
+		867427F92017376A006E501E /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427F82017376A006E501E /* PopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		867427F120164280006E501E /* UICollectionViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		867427F3201645D5006E501E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		867427F620165320006E501E /* PhotoRecuperationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRecuperationService.swift; sourceTree = "<group>"; };
+		867427F82017376A006E501E /* PopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				867427D52015E6E7006E501E /* MapViewController.swift */,
+				867427F82017376A006E501E /* PopViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			files = (
 				867427EA2015F0C3006E501E /* MapDelegate.swift in Sources */,
 				867427EC2015F25F006E501E /* LocationDelegate.swift in Sources */,
+				867427F92017376A006E501E /* PopViewController.swift in Sources */,
 				867427F220164280006E501E /* UICollectionViewDelegate+DataSource.swift in Sources */,
 				867427EE2015F9AF006E501E /* DroppablePin.swift in Sources */,
 				867427D62015E6E7006E501E /* MapViewController.swift in Sources */,
