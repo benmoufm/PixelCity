@@ -134,6 +134,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7bS-D0-1XE"/>
                     </view>
+                    <connections>
+                        <outlet property="popImageView" destination="s1E-Ji-RnO" id="WL0-7m-Vy0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sv4-nh-3Cy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

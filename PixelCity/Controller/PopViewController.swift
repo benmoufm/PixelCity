@@ -10,7 +10,18 @@ import UIKit
 
 class PopViewController: UIViewController {
 
+    // Outlets
+    @IBOutlet weak var popImageView: UIImageView!
+
+    // Variables
+    var passedImage: UIImage!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        popImageView.image = passedImage
+    }
+
+    func initData(forImage passedImage: UIImage) {
+        self.passedImage = passedImage
     }
 }
