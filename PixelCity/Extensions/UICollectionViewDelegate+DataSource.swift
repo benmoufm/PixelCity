@@ -23,4 +23,10 @@ extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         cell.addSubview(imageView)
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let popViewController = storyboard?.instantiateViewController(withIdentifier: POP_VIEW_CONTROLLER_ID) as? PopViewController else { return }
+        popViewController.initData(forImage: imagesArray[indexPath.row])
+        present(popViewController, animated: true, completion: nil)
+    }
 }

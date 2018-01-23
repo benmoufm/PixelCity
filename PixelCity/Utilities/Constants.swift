@@ -14,6 +14,7 @@ let apiKey = "00ca9e96edae287bbca939d8722d040a"
 // Reuse Identifiers
 let DROPPABLE_PIN = "droppablePin"
 let PHOTO_CELL = "photoCell"
+let POP_VIEW_CONTROLLER_ID = "PopViewController"
 
 // JSON keys
 let PHOTOS_KEY = "photos"
