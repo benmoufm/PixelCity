@@ -43,6 +43,8 @@ extension MapViewController: MKMapViewDelegate {
         removeSpinner()
         removeProgressLabel()
         PhotoRecuperationService.instance.cancelAllSessions()
+        imagesArray = []
+        collectionView?.reloadData()
         let touchPoint = sender.location(in: mapView)
         let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         let annotation = DroppablePin(coordinate: touchCoordinate, identifier: DROPPABLE_PIN)
@@ -61,6 +63,7 @@ extension MapViewController: MKMapViewDelegate {
                         self.removeSpinner()
                         self.removeProgressLabel()
                         self.imagesArray = images
+                        self.collectionView?.reloadData()
                     }
                 })
             }
