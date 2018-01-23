@@ -63,6 +63,13 @@ class PhotoRecuperationService {
         }
     }
 
+    func cancelAllSessions() {
+        sessionManager.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
+            sessionDataTask.forEach( { $0.cancel() } )
+            downloadData.forEach( { $0.cancel() } )
+        }
+    }
+
     private func buildImageUrl(photo: JSON) -> String {
         guard let farm = photo[FARM_KEY].int,
             let server = photo[SERVER_KEY].string,

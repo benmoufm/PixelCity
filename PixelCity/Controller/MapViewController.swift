@@ -69,6 +69,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @objc func animateViewDown() {
+        PhotoRecuperationService.instance.cancelAllSessions()
         pullUpViewHeightConstraint.constant = 0
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
