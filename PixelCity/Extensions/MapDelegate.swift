@@ -31,7 +31,7 @@ extension MapViewController: MKMapViewDelegate {
         if annotation is MKUserLocation {
             return nil
         }
-        let pinAnnotation = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "droppablePin")
+        let pinAnnotation = MKPinAnnotationView(annotation: annotation, reuseIdentifier: DROPPABLE_PIN)
         pinAnnotation.pinTintColor = #colorLiteral(red: 0.9771530032, green: 0.7062081099, blue: 0.1748393774, alpha: 1)
         pinAnnotation.animatesDrop = true
         return pinAnnotation
@@ -44,7 +44,7 @@ extension MapViewController: MKMapViewDelegate {
         removeProgressLabel()
         let touchPoint = sender.location(in: mapView)
         let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        let annotation = DroppablePin(coordinate: touchCoordinate, identifier: "droppablePin")
+        let annotation = DroppablePin(coordinate: touchCoordinate, identifier: DROPPABLE_PIN)
         mapView.addAnnotation(annotation)
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(touchCoordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)

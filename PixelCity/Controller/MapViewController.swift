@@ -40,7 +40,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
         addSwipe()
 
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
-        collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "photoCell")
+        collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PHOTO_CELL)
         collectionView?.delegate = self
         collectionView?.dataSource = self
         pullUpView.addSubview(collectionView!)

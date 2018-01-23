@@ -21,14 +21,14 @@ class PhotoRecuperationService {
     }
 
     func retrieveUrls(forAnnotation annotation: DroppablePin, completionHandler: @escaping (_ success: Bool,_ urls: [String]) -> Void) {
-        sessionManager.request(flickrUrl(forApiKey: apiKey, withAnnotation: annotation, addNumberOfPhotos: 40))
+        sessionManager.request(flickrUrl(forApiKey: apiKey, withAnnotation: annotation, addNumberOfPhotos: NUMBER_OF_PHOTOS))
             .responseJSON { (response) in
                 if response.result.error == nil {
                     guard let data = response.data else { return }
                     do {
                         let json = try JSON(data: data)
-                        let photosDictionnary = json["photos"].dictionaryValue
-                        guard let photosDictionnaryArray = photosDictionnary["photo"]?.arrayValue else { fatalError() }
+                        let photosDictionnary = json[PHOTOS_KEY].dictionaryValue
+                        guard let photosDictionnaryArray = photosDictionnary[PHOTO_KEY]?.arrayValue else { fatalError() }
                         let urlsArray = photosDictionnaryArray.map { (photo: JSON) -> String in
                             self.buildImageUrl(photo: photo)
                         }
@@ -45,10 +45,10 @@ class PhotoRecuperationService {
     }
 
     private func buildImageUrl(photo: JSON) -> String {
-        guard let farm = photo["farm"].int,
-            let server = photo["server"].string,
-            let id = photo["id"].string,
-            let secret = photo["secret"].string else { return "" }
+        guard let farm = photo[FARM_KEY].int,
+            let server = photo[SERVER_KEY].string,
+            let id = photo[ID_KEY].string,
+            let secret = photo[SECRET_KEY].string else { return "" }
         return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_h_d.jpg"
     }
 }
